@@ -3,28 +3,40 @@ console.log("Hello World!\n==========\n");
 // Exercise 1 Section
 console.log("EXERCISE 1:\n==========\n");
 function printOdds(count){
-for (i = 1; i <= count; i++){
-    if (i % 2 != 0){
-        console.log(i)
+    if (count > 0){
+        for (i = 1; i <= count; i++){
+    
+            if (i % 2 != 0){
+            console.log(i)
+            }
+        }   
     }
-
+    if (count < 0){
+        for (i = -1; i >= count; i--){
+            if (i % 2 != 0){
+                console.log(i)
+                }
+        }
+    }
 }
-}
-printOdds(30)
+printOdds(-30)
 
 // Exercise 2 Section
 console.log("EXERCISE 2:\n==========\n");
 function checkAge(userName, age){
     aboveSixteen = `Congrats ${userName}, you can drive!`
     belowSixteen = `Sorry ${userName}, but you need to wait until you're 16.`
+    if (userName == null || age == null){
+        console.log(`Sorry not enough information`)    
+    }
     if (age >= 16){
         console.log(aboveSixteen)
     }
-    else{
+    else if (age < 16){
     console.log(belowSixteen)
     }
 }
-checkAge(`Kenny`, 35)
+checkAge(`Kenny`,18 )
 
 // Exercise 3 Section
 console.log("EXERCISE 3:\n==========\n");
@@ -76,3 +88,14 @@ validTriangle(31, 1, 1)
 
 // Exercise 5 Section
 console.log("EXERCISE 5:\n==========\n");
+function plan(planLimit, day, usage){
+    let daysRemian = 30 - day
+    let avgUse = Math.round((usage / day)*100)/100
+    console.log(`${day} days used, ${daysRemian} days remaining`)
+    console.log(`Average daily use: ${avgUse} GB/day`)
+    
+    
+
+
+}
+plan(100, 15, 56)
